@@ -5,25 +5,21 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "server": "node server.js"
   },
   "author": "liyincode",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "csv-loader": "^3.0.5",
+    "express": "^4.21.2",
     "html-webpack-plugin": "^5.6.3",
-    "json5": "^2.2.3",
-    "toml": "^3.0.0",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0",
-    "xml-loader": "^1.2.1",
-    "yamljs": "^0.3.0"
+    "webpack-dev-middleware": "^7.4.2",
+    "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
-    "css-loader": "^7.1.2",
-    "lodash": "^4.17.21",
-    "style-loader": "^4.0.0"
+    "lodash": "^4.17.21"
   }
 }
