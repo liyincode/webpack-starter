@@ -1,35 +1,17 @@
 // import _ from 'lodash';
-import './style.css';
-import Icon from './icon.png';
-import dataXml from './data.xml';
-import dataCsv from './data.csv';
-import toml from './data.toml';
-import yaml from './data.yaml';
-import json from './data.json5';
-
-console.log(toml.title); // output `TOML Example`
-console.log(toml.owner.name); // output `Tom Preston-Werner`
-
-console.log(yaml.title); // output `YAML Example`
-console.log(yaml.owner.name); // output `Tom Preston-Werner`
-
-console.log(json.title); // output `JSON5 Example`
-console.log(json.owner.name); // output `Tom Preston-Werner`
+import print from './print'
 
 function component() {
     const element = document.createElement('div');
+    const btn = document.createElement('button');
 
     // element.innerHTML = _.join(['Hello', 'webpack123'], ' ');
     element.innerText= 'Hello webpack!';
-    element.classList.add('hello');
 
-    const myIcon = new Image();
-    myIcon.src = Icon;
+    btn.innerHTML = 'Click me and check the console!';
+    btn.onclick = print;
 
-    element.appendChild(myIcon);
-
-    console.log(dataXml);
-    console.log(dataCsv);
+    element.appendChild(btn)
 
     return element;
 }
