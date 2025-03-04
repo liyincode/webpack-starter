@@ -5,18 +5,18 @@ module.exports = {
     mode: 'development',
 
     entry: {
-        // index: './src/index.js',
-        // another: './src/another-module.js'
+        index: './src/index.js',
+        another: './src/another-module.js'
 
-        index: {
-            import: './src/index.js',
-            dependOn: 'shared'
-        },
-        another: {
-            import: './src/another-module.js',
-            dependOn: 'shared'
-        },
-        shared: 'lodash'
+        // index: {
+        //     import: './src/index.js',
+        //     dependOn: 'shared'
+        // },
+        // another: {
+        //     import: './src/another-module.js',
+        //     dependOn: 'shared'
+        // },
+        // shared: 'lodash'
     },
 
     devtool: 'inline-source-map',
@@ -40,6 +40,9 @@ module.exports = {
 
     optimization: {
         minimize: false,
-        runtimeChunk: 'single'
+        runtimeChunk: 'single',
+        splitChunks: {
+            chunks: 'all'
+        }
     }
 }
