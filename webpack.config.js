@@ -11,6 +11,10 @@ module.exports = {
 
     devtool: 'inline-source-map',
 
+    devServer: {
+        static: './dist'
+    },
+
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Development'
@@ -24,6 +28,7 @@ module.exports = {
     },
 
     optimization: {
-        minimize: false
+        minimize: false,
+        runtimeChunk: 'single'
     }
 }
