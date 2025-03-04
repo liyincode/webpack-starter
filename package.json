@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "webpack-starter",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "liyincode",
   "license": "MIT",
