@@ -1,11 +1,11 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 
 module.exports = {
     entry: {
-        index: './src/index.js',
+        index: './src/index.ts',
     },
+
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Production',
@@ -14,8 +14,19 @@ module.exports = {
             join: 'lodash/join',
         })
     ],
+
     output: {
         filename: '[name].bundle.js',
         clean: true,
     },
+
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
+        ]
+    }
 };
