@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "webpack-starter",
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack",
+    "start": "webpack serve --open --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.prod.js",
     "watch": "webpack --watch",
     "server": "node server.js"
   },
@@ -17,7 +17,8 @@
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
     "webpack-dev-middleware": "^7.4.2",
-    "webpack-dev-server": "^5.2.0"
+    "webpack-dev-server": "^5.2.0",
+    "webpack-merge": "^6.0.1"
   },
   "dependencies": {
     "lodash": "^4.17.21"
