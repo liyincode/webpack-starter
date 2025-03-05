@@ -1,29 +1,24 @@
 import _ from 'lodash';
-import printMe from './print.js';
 
 function component() {
     const element = document.createElement('div');
-    const btn = document.createElement('button');
+    const button = document.createElement('button');
+    const br = document.createElement('br');
 
+    button.innerHTML = 'Click me and look at the console!';
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.appendChild(br);
+    element.appendChild(button);
 
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
+    // Note that because a network request is involved, some indication
+    // of loading would need to be shown in a production-level site/app.
+    button.onclick = e => import('./print').then(module => {
+        const print = module.default;
 
-    element.appendChild(btn);
+        print();
+    });
 
     return element;
 }
 
-// document.body.appendChild(component());
-let element =  component();
-document.body.appendChild(element);
-
-if (module.hot) {
-    module.hot.accept('./print.js', function() {
-        console.log('Accepting the updated printMe module!');
-        document.body.removeChild(element);
-        element = component();
-        document.body.appendChild(element);
-    })
-}
+document.body.appendChild(component());
