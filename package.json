@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "webpack-starter",
   "scripts": {
-    "start": "webpack serve --open --config config/webpack.dev.js",
+    "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "watch": "webpack --watch",
     "server": "node server.js"

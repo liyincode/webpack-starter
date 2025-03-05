@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
     entry: {
@@ -9,6 +10,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Production',
         }),
+        new webpack.ProvidePlugin({
+            join: 'lodash/join',
+        })
     ],
     output: {
         filename: '[name].bundle.js',

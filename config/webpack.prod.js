@@ -18,6 +18,4 @@ module.exports = merge(common, {
         },
         minimize: false,
     },
-
-
 });
