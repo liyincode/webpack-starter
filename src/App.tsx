@@ -1,10 +1,11 @@
-import icon from "@/assets/icon.png";
+import TodoList from "./components/TodoList";
 
-const App = (
-  <div className="red bg-amber-100 text-3xl">
-    Hello World!
-    <img src={icon} alt="data" />
-  </div>
-);
+function App() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <TodoList />
+    </div>
+  );
+}
 
 export default App;
