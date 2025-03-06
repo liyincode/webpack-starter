@@ -1,32 +1,39 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack')
+const path = require("path");
 
 module.exports = {
-    entry: {
-        index: './src/index.ts',
-    },
+  entry: {
+    index: "./src/main.tsx",
+  },
 
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Production',
-        }),
-        new webpack.ProvidePlugin({
-            join: 'lodash/join',
-        })
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+
+    alias: {
+      "@": path.resolve(__dirname, "../src"),
+    },
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/images/[hash][ext][query]",
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/fonts/[hash][ext][query]",
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ],
-
-    output: {
-        filename: '[name].bundle.js',
-        clean: true,
-    },
-
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            }
-        ]
-    }
+  },
 };

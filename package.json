@@ -5,25 +5,43 @@
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
-    "watch": "webpack --watch",
-    "server": "node server.js"
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "author": "liyincode",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@types/lodash": "^4.17.16",
+    "@eslint/js": "^9.21.0",
+    "@tailwindcss/postcss": "^4.0.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "express": "^4.21.2",
+    "globals": "^16.0.0",
     "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.0.9",
+    "terser-webpack-plugin": "^5.3.12",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-middleware": "^7.4.2",
     "webpack-dev-server": "^5.2.0",
     "webpack-merge": "^6.0.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
