@@ -5,6 +5,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
   mode: "production",
@@ -44,6 +46,10 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].chunk.css",
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerPort: 8888,
+      openAnalyzer: false,
     }),
   ],
 
