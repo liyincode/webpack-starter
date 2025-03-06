@@ -29,11 +29,6 @@ module.exports = {
           filename: "assets/fonts/[hash][ext][query]",
         },
       },
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
     ],
   },
 };
