@@ -18,13 +18,18 @@ A modern frontend development starter template with Webpack 5, React 19, TypeScr
 
 ## Installation
 
-```bash
-# Clone this repository
-git clone https://github.com/liyincode/webpack-starter.git
-cd webpack-starter
+### GitHub Template
 
-# Install dependencies
-npm install
+[Create a repo from this template on GitHub](https://github.com/liyincode/webpack-starter/generate).
+
+### Clone to local
+
+If you prefer to do it manually with the cleaner git history
+
+```bash
+npx degit liyincode/webpack-starter my-app
+cd my-app
+npm i
 ```
 
 ## Scripts

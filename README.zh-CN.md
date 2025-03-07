@@ -18,13 +18,18 @@
 
 ## 安装
 
-```bash
-# 克隆此仓库
-git clone https://github.com/liyincode/webpack-starter.git
-cd webpack-starter
+### GitHub 模板
 
-# 安装依赖
-npm install
+[使用这个模板创建仓库](https://github.com/liyincode/webpack-starter/generate)
+
+### 克隆到本地
+
+如果您更喜欢使用更干净的 git 历史记录手动执行此操作
+
+```bash
+npx degit liyincode/webpack-starter my-app
+cd my-app
+npm i 
 ```
 
 ## 脚本命令
